@@ -204,47 +204,6 @@ void SysTick_Handler(void)
 void TIM2_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM2_IRQn 0 */
-	//static uint32_t OstimeKeeper = 0;
-	//HAL_GPIO_WritePin(D2_1ms_GPIO_Port,D2_1ms_Pin,GPIO_PIN_SET);
-	//HAL_GPIO_TogglePin(D2_1ms_GPIO_Port,D2_1ms_Pin);
-//
-//	OstimeKeeper++;
-//	  {
-//	  	static uint32_t taskQueueindex = 0;
-//
-//	  	taskQueue[taskQueueindex] = &(Os_Task1ms);
-//	  	taskQueueindex++;
-//	  	if(MAX_TASK_QUEUE < taskQueueindex )
-//	  	{
-//	  		/*Drawback of this strategy : After 10 tasks the buffer roll overs, so if there is any task which is pending execution in buffer then it shall be lost*/
-//	  		taskQueueindex = 0U;	/*Circular buffer to keep queuing the task*/
-//	  	}
-//
-//	  	if(0U == (OstimeKeeper % TASK_5MS))
-//	  	{
-//	  		taskQueue[taskQueueindex] = &(Os_Task5ms);
-//	  		taskQueueindex++;
-//	  	}
-//	  	if(MAX_TASK_QUEUE < taskQueueindex )
-//	  	{
-//	  		/*Drawback of this strategy : After 10 tasks the buffer roll overs, so if there is any task which is pending execution in buffer then it shall be lost*/
-//	  		taskQueueindex = 0U;	/*Circular buffer to keep queuing the task*/
-//	  	}
-//
-//	  	if(0U == (OstimeKeeper % TASK_10MS))
-//	  	{
-//	  		taskQueue[taskQueueindex] = &(Os_Task10ms);
-//	  		taskQueueindex++;
-//	  		OstimeKeeper = 0;
-//	  	}
-//	  	if(MAX_TASK_QUEUE < taskQueueindex )
-//	  	{
-//	  		/*Drawback of this strategy : After 10 tasks the buffer roll overs, so if there is any task which is pending execution in buffer then it shall be lost*/
-//	  		taskQueueindex = 0U;	/*Circular buffer to keep queuing the task*/
-//	  	}
-//	  }
-	  //scheduler_run(OstimeKeeper);
-	//HAL_GPIO_WritePin(D2_1ms_GPIO_Port,D2_1ms_Pin,GPIO_PIN_RESET);
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
   /* USER CODE BEGIN TIM2_IRQn 1 */

@@ -9,10 +9,6 @@ extern "C" {
 #include "OsMain.h"
 #include "main.h"
 
-//
-//#define TASK_1MS	1U
-//#define TASK_5MS	5U
-//#define TASK_10MS	10U
 
 void (*taskQueue[MAX_TASK_QUEUE])(void)= {0U};
 
@@ -79,8 +75,7 @@ void OsTaskRun(void)
 	{
 		if(NULL == taskQueue[taskindex])
 		{
-			//taskindex++; /*Move to next task in queue*/
-			// Do Nothing and move to next one
+			/* Do Nothing and move to next one */
 		}
 		else
 		{

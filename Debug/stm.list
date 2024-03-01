@@ -39,9 +39,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  000151ca  00000000  00000000  0002b3b2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000a736  00000000  00000000  0004057c  2**0
+ 18 .debug_line   0000a734  00000000  00000000  0004057c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00087202  00000000  00000000  0004acb2  2**0
+ 19 .debug_str    00087202  00000000  00000000  0004acb0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  20 .debug_frame  0000277c  00000000  00000000  000d1eb4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -408,7 +408,7 @@ void scheduler_run()
  8000510:	b480      	push	{r7}
  8000512:	af00      	add	r7, sp, #0
 	static uint32_t taskQueueindex = 0U;
-	static uint32_t schTimeKeeper =0U;
+	static uint32_t schTimeKeeper = 0U;
 
 	schTimeKeeper++;
  8000514:	4b2d      	ldr	r3, [pc, #180]	; (80005cc <scheduler_run+0xbc>)
@@ -555,8 +555,8 @@ void OsTaskRun(void)
  80005f8:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
  80005fc:	2b00      	cmp	r3, #0
  80005fe:	d009      	beq.n	8000614 <OsTaskRun+0x2c>
-			//taskindex++; /*Move to next task in queue*/
-			// Do Nothing and move to next one
+		{
+			/* Do Nothing and move to next one */
 		}
 		else
 		{
@@ -1325,10 +1325,7 @@ void TIM2_IRQHandler(void)
 {
  80009a0:	b580      	push	{r7, lr}
  80009a2:	af00      	add	r7, sp, #0
-//	  	}
-//	  }
-	  //scheduler_run(OstimeKeeper);
-	//HAL_GPIO_WritePin(D2_1ms_GPIO_Port,D2_1ms_Pin,GPIO_PIN_RESET);
+  /* USER CODE BEGIN TIM2_IRQn 0 */
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
  80009a4:	4802      	ldr	r0, [pc, #8]	; (80009b0 <TIM2_IRQHandler+0x10>)
