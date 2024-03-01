@@ -1,0 +1,5 @@
+../Core/Src/OsMain.c:21:6:Os_Task1ms	1
+../Core/Src/OsMain.c:25:6:Os_Task5ms	1
+../Core/Src/OsMain.c:29:6:Os_Task10ms	1
+../Core/Src/OsMain.c:37:6:scheduler_run	6
+../Core/Src/OsMain.c:76:6:OsTaskRun	3
